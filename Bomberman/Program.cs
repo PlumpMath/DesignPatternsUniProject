@@ -14,7 +14,6 @@ namespace Bomberman
 
     static class Program
     {
-        
         static void Main()
         {
             AbstractGameEngine game = new Game(new BombermanWindow());
