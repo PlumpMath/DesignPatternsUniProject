@@ -7,18 +7,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using Bomberman.GameEngine;
+using Bomberman.Source;
 
 namespace Bomberman
 {
+
     static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-  
+        
         static void Main()
         {
-            var game = new Game();
+            AbstractGameEngine game = new Game(new BombermanWindow());
             game.Start();
         }
     }

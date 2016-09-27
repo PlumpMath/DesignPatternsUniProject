@@ -1,4 +1,4 @@
-﻿using Bomberman.GameEngine.Entities;
+﻿using Bomberman.Source.Entities;
 
 namespace Bomberman.GameEngine.Logic
 {

@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Bomberman.GameEngine.Logic;
 
-namespace Bomberman.GameEngine.Display
+namespace Bomberman.Source.Display
 {
     class MapScreen : AbstractScreen
     {
@@ -18,13 +15,23 @@ namespace Bomberman.GameEngine.Display
         {
             this._map = map;
             Display.SetDimentions(width, lenght);
+            Display.SetColor("#000000");
+            Display.DrawBackground();
+            
+
+            Display.Refresh();
+
             _nodeLenght = lenght / map.Lenght;
             _nodeWhidth = width/map.Width;
+
         }
 
         public override void Draw()
         {
-            throw new NotImplementedException();
+
+            
+            Display.Clear();
+            Display.Refresh();
         }
     }
 }

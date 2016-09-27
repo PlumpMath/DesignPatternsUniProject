@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms.VisualStyles;
+﻿using System.Windows.Forms;
 
-namespace Bomberman.GameEngine.Display
+namespace Bomberman.Source.Display
 {
     public interface IDisplay
     {
 
-        void Display();
+        void Refresh();
 
         void SetDimentions(int width, int lenght);
 
@@ -22,5 +16,9 @@ namespace Bomberman.GameEngine.Display
         void DrawRectangle(Rectangle destination);
 
         void DrawImage(string image, Rectangle source, Rectangle destination);
+
+        void DrawText(string text, Rectangle rectangle);
+
+        void Clear();
     }
 }

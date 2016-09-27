@@ -10,25 +10,11 @@ using System.Windows.Forms;
 
 namespace Bomberman
 {
-    public partial class Bomberman : Form
+    public partial class BombermanWindow : Form
     {
-        public Bomberman()
+        public BombermanWindow()
         {
             InitializeComponent();
         }
-
-        public void DrawIt(Graphics graphics)
-        {
-            
-            var nodeSize = 30;
-            var screenSize = 20;
-            for (int i = 0; i< screenSize; i++)
-            {
-                graphics.DrawRectangle(Pens.Red, i*nodeSize, 0, nodeSize, nodeSize);
-                graphics.DrawRectangle(Pens.Red, 0, i*nodeSize, nodeSize, nodeSize);
-            }
-        }
-
-       
     }
 }

@@ -1,8 +1,6 @@
-﻿using System.Windows.Forms;
-
-namespace Bomberman.GameEngine.Display
+﻿namespace Bomberman.Source.Display
 {
-    public abstract class AbstractScreen
+    public abstract class AbstractScreen : IScreen
     {
         protected IDisplay Display;
         public int Lenght { get; set; }

@@ -7,7 +7,7 @@
 
         private Node[,] nodes;
 
-        public Map(int lenght = 10, int width = 10) {
+        public Map(int width = 10, int lenght = 10) {
             Lenght = lenght;
             Width = width;
             nodes = new Node[width, lenght];

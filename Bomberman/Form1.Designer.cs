@@ -1,6 +1,6 @@
 ﻿namespace Bomberman
 {
-    partial class Bomberman
+    partial class BombermanWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // Bomberman
+            // BombermanWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(504, 449);
             this.Name = "Bomberman";
-            this.Text = "Bomberman";
+            this.Text = "BombermanWindow";
             this.ResumeLayout(false);
 
         }

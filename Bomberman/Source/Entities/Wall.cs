@@ -1,4 +1,4 @@
-﻿namespace Bomberman.GameEngine.Entities
+﻿namespace Bomberman.Source.Entities
 {
     public abstract class Wall: Entity
     {

@@ -1,4 +1,4 @@
-﻿namespace Bomberman.GameEngine.Entities
+﻿namespace Bomberman.Source.Entities
 {
     class SimpleBomb : Bomb
     {
