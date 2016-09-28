@@ -6,6 +6,8 @@ namespace Bomberman.Source.Controls
     class FormController : IController
     {
         private Action OnSpacePress;
+        private Action OnWPress;
+        private Action OnSPress;
 
         private Form _form;
 
@@ -24,13 +26,21 @@ namespace Bomberman.Source.Controls
                     OnSpacePress();
                     e.Handled = true;
                     break;
+                case 'w':
+                    OnWPress();
+                    e.Handled = true;
+                    break;
+                case 's':
+                    OnSPress();
+                    e.Handled = true;
+                    break;
             }
             
         }
 
         public void OnWClick(Action action)
         {
-            action();
+            OnWPress = action;
         }
 
         public void OnDClick(Action action)
@@ -45,12 +55,12 @@ namespace Bomberman.Source.Controls
 
         public void OnBClick(Action action)
         {
-            action();
+            OnSpacePress = action;
         }
 
         public void OnSClick(Action action)
         {
-            action();
+            OnSPress = action;
         }
 
         public void OnSpaceClick(Action action)

@@ -90,6 +90,16 @@ namespace Bomberman.Source
                 _display.SetColor(code);
                 _display.DrawBackground();
             });
+
+            _controller.OnWClick(delegate
+            {
+                GameTimer.Instance.Start();
+            });
+
+            _controller.OnSClick(delegate
+            {
+                GameTimer.Instance.Stop();
+            });
         }
 
     }

@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Bomberman.BombermanWindow" Collapsed="true">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bomberman.Program" Collapsed="true">
+    <Position X="15.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bomberman.Properties.Resources" Collapsed="true">
+    <Position X="12.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bomberman.Properties.Settings" Collapsed="true">
+    <Position X="14" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bomberman.Source.AbstractGameEngine" Collapsed="true">
+    <Position X="3.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAACAAAAAAAAAAgAAAAAAAAAAgAAAAAAAAIAI=</HashCode>
+      <FileName>Source\AbstractGameEngine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bomberman.Source.Game" Collapsed="true">
+    <Position X="3.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIABACAABAABAACAAAAAAAAAAAAQAABgAAAQAkAAJAo=</HashCode>
+      <FileName>Source\Game.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bomberman.Source.GameTimer" Collapsed="true">
+    <Position X="17.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAACAgAAAAAAAAAAAAAAAACAAAYAAAAAAAAAA=</HashCode>
+      <FileName>Source\GameTimer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bomberman.Source.Controls.FormController" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0AABAA=</HashCode>
+      <FileName>Source\Controls\FormController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Bomberman.Source.Display.AbstractScreen" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAQAAAAAAAEAAACAAAAAAAAA=</HashCode>
+      <FileName>Source\Display\AbstractScreen.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bomberman.Source.Display.FormDisplay" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABgAAAAQAABIAAAAAAAAAAACAAAAQAAAAAgEAABABIA=</HashCode>
+      <FileName>Source\Display\FormDisplay.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Bomberman.Source.Display.MapScreen" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAgAAAAIAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Source\Display\MapScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bomberman.Source.Display.Rectangle" Collapsed="true">
+    <Position X="17.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAAAAYAA=</HashCode>
+      <FileName>Source\Display\Rectangle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bomberman.Source.Entities.Bomb" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Source\Entities\Bomb.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bomberman.Source.Entities.Entity" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\Entities\Entity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bomberman.Source.Entities.Explosion" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\Entities\Explosion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bomberman.Source.Entities.HardWall" Collapsed="true">
+    <Position X="7.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\Entities\HardWall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bomberman.Source.Entities.Player" Collapsed="true">
+    <Position X="9.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\Entities\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bomberman.Source.Entities.SimpleBomb" Collapsed="true">
+    <Position X="0.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Source\Entities\SimpleBomb.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bomberman.Source.Entities.SoftWall" Collapsed="true">
+    <Position X="5.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\Entities\SoftWall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bomberman.Source.Entities.Wall" Collapsed="true">
+    <Position X="6.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\Entities\Wall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bomberman.GameEngine.Logic.Map" Collapsed="true">
+    <Position X="12.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAAAAIAA=</HashCode>
+      <FileName>Source\Logic\Map.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bomberman.GameEngine.Logic.Node" Collapsed="true">
+    <Position X="14" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Source\Logic\Node.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Bomberman.Source.Controls.IController" Collapsed="true">
+    <Position X="12.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUAAAAA=</HashCode>
+      <FileName>Source\Controls\IController.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Bomberman.Source.Display.IDisplay" Collapsed="true">
+    <Position X="14" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABgAAAAQAABAAAAAAAAAAAAAAAAAAAAAAAgEAABAAIA=</HashCode>
+      <FileName>Source\Display\IDisplay.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Bomberman.Source.Display.IScreen" Collapsed="true">
+    <Position X="15.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\Display\IScreen.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
