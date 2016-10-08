@@ -2,9 +2,9 @@
 using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
-using Bomberman.GameEngine.Logic;
 using Bomberman.Source.Controls;
 using Bomberman.Source.Display;
+using Bomberman.Source.Logic;
 
 namespace Bomberman.Source
 {

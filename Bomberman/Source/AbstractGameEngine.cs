@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Bomberman.Source
 {
@@ -13,7 +9,7 @@ namespace Bomberman.Source
         {
             BindControls();
             GameTimer.Instance.OnTick(MainLoop);
-            GameTimer.Instance.Start();
+            //GameTimer.Instance.Start();
             StartApp();
 
         }

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using Bomberman.GameEngine.Logic;
+using Bomberman.Source.Logic;
 
 namespace Bomberman.Source.Display
 {

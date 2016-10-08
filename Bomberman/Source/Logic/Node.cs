@@ -1,6 +1,6 @@
 ﻿using Bomberman.Source.Entities;
 
-namespace Bomberman.GameEngine.Logic
+namespace Bomberman.Source.Logic
 {
     public class Node
     {

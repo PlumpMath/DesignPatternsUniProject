@@ -6,7 +6,6 @@ using System.Runtime.Remoting.Messaging;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
-using Bomberman.GameEngine;
 using Bomberman.Source;
 
 namespace Bomberman
@@ -16,6 +15,7 @@ namespace Bomberman
     {
         static void Main()
         {
+            GameTimer.Instance.Start();
             AbstractGameEngine game = new Game(new BombermanWindow());
             game.Start();
         }
