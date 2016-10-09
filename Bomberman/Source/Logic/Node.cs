@@ -6,9 +6,9 @@ namespace Bomberman.Source.Logic
     {
         private Entity entity {get; set;}
 
-        public Node()
+        public Node(Entity en)
         {
-            entity = null;
+            entity = en;
         }
 
         public bool isEmpty()
