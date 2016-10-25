@@ -38,10 +38,10 @@ namespace Bomberman.Source.Logic
                     switch (wall)
                     {
                         case "HW": 
-                            _nodes[j,i] = new Node(wallFactory.GetNode("hard"));
+                            _nodes[j,i] = new Node(wallFactory.CreateNode("hard"));
                             break;
                         case "SW":
-                            _nodes[j,i] = new Node(wallFactory.GetNode("soft"));
+                            _nodes[j,i] = new Node(wallFactory.CreateNode("soft"));
                             break;
                         case "EW":
                             _nodes[j,i] = new Node(null);

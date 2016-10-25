@@ -7,14 +7,14 @@ using Bomberman.Source.Logic;
 
 namespace Bomberman.Source.Entities.Factories
 {
-    class BombFactory : AbstractEntityFactory
+    public class BombFactory : AbstractEntityFactory
     {
-        public override Entity GetNode(string nodeType)
+        public override Entity CreateNode(string nodeType)
         {
-            return GetBomb(nodeType);
+            return CreateBomb(nodeType);
         }
 
-        public Bomb GetBomb(string bombType)
+        public Bomb CreateBomb(string bombType)
         {
             switch (bombType)
             {

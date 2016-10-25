@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Bomberman.Source.Entities.Factories
 {
-    class WallFactory : AbstractEntityFactory
+    public class WallFactory : AbstractEntityFactory
     {
-        public override Entity GetNode(string nodeType)
+        public override Entity CreateNode(string nodeType)
         {
-            return GetWall(nodeType);
+            return CreateWall(nodeType);
         }
 
-        public Wall GetWall(string wallType)
+        public Wall CreateWall(string wallType)
         {
             switch (wallType)
             {

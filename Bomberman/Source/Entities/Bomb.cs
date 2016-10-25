@@ -2,6 +2,6 @@
 {
     public abstract class Bomb : Entity
     {
-        abstract public int getPower();
+        public abstract int GetPower();
     }
 }
