@@ -4,16 +4,16 @@ namespace Bomberman.Source.Logic
 {
     public class Node
     {
-        private Entity entity {get; set;}
+        public Entity Entity { get; }
 
         public Node(Entity en)
         {
-            entity = en;
+            Entity = en;
         }
 
-        public bool isEmpty()
+        public bool IsEmpty()
         {
-            return entity == null;
+            return Entity == null;
         }
     }
 }

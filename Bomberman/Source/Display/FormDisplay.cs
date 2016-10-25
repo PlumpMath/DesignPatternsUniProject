@@ -55,7 +55,14 @@ namespace Bomberman.Source.Display
 
         public void DrawRectangle(Rectangle destination)
         {
-            throw new NotImplementedException();
+            using (var g = Graphics.FromImage(_image))
+            {
+                System.Drawing.Rectangle rectangle = new System.Drawing.Rectangle(destination.X, destination.Y, destination.Width, destination.Lenght);
+                g.FillRectangle(new SolidBrush(_color), rectangle);
+                g.DrawRectangle(new Pen(_color), rectangle );
+                canvas.Invalidate();
+            }
+            //throw new NotImplementedException();
         }
 
         public void DrawImage(string image, Rectangle source, Rectangle destination)

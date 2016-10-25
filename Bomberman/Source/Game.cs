@@ -100,6 +100,19 @@ namespace Bomberman.Source
             {
                 GameTimer.Instance.Stop();
             });
+
+            _controller.OnAClick(delegate
+            {
+               
+            });
+            _controller.OnBClick(delegate
+            {
+
+            });
+            _controller.OnDClick(delegate
+            {
+
+            });
         }
 
     }

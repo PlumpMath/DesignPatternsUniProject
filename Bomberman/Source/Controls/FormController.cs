@@ -10,6 +10,7 @@ namespace Bomberman.Source.Controls
         private Action OnSPress;
         private Action OnAPress;
         private Action OnDPress;
+        private Action OnBPress;
 
         private Form _form;
 
@@ -44,6 +45,10 @@ namespace Bomberman.Source.Controls
                     OnDPress();
                     e.Handled = true;
                     break;
+                case 'b':
+                    OnBPress();
+                    e.Handled = true;
+                    break;
             }
             
         }
@@ -65,7 +70,7 @@ namespace Bomberman.Source.Controls
 
         public void OnBClick(Action action)
         {
-            OnSpacePress = action;
+            OnBPress = action;
         }
 
         public void OnSClick(Action action)

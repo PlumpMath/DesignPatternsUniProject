@@ -11,16 +11,16 @@ namespace Bomberman.Source.Logic
         public int Lenght { get; }
         public int Width { get; }
 
-        private Node[,] nodes;
+        private Node[,] _nodes;
 
         public Map(int width = 11, int lenght = 11) {
             Lenght = lenght;
             Width = width;
-            nodes = new Node[width, lenght];
+            _nodes = new Node[width, lenght];
             BuildMap();
         }
 
-        public void BuildMap()
+        private void BuildMap()
         {
             StreamReader streamReader = new StreamReader("../../Resources/Map.txt");
             string line;
@@ -36,13 +36,13 @@ namespace Bomberman.Source.Logic
                     switch (wall)
                     {
                         case "HW": 
-                            nodes[j,i] = new Node(new HardWall());
+                            _nodes[j,i] = new Node(new HardWall());
                             break;
                         case "SW":
-                            nodes[j,i] = new Node(new SoftWall());
+                            _nodes[j,i] = new Node(new SoftWall());
                             break;
                         case "EW":
-                            nodes[j,i] = new Node(null);
+                            _nodes[j,i] = new Node(null);
                             break;
                         default:
                             Console.Write("Error occured");
@@ -53,6 +53,11 @@ namespace Bomberman.Source.Logic
                 j++;
             }
 
+        }
+
+        public Node getNode(int x, int y)
+        {
+            return _nodes[x,y];
         }
 
     }
