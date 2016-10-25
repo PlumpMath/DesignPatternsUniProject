@@ -40,7 +40,7 @@ namespace Bomberman.Source.Display
                 {
                     var node = _map.getNode(i, j);
                     DrawNode(node);
-                    Rectangle rectangle = new Rectangle(i* _nodeLenght/2, j*_nodeWhidth/2, _nodeWhidth, _nodeLenght);
+                    Rectangle rectangle = new Rectangle(i* _nodeLenght, j*_nodeWhidth, _nodeWhidth, _nodeLenght);
                     Display.DrawRectangle(rectangle);
                 }
             }
