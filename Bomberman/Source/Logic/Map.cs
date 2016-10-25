@@ -47,7 +47,7 @@ namespace Bomberman.Source.Logic
                             _nodes[j,i] = new Node(null);
                             break;
                         case "PL":
-                            _nodes[j,i] = new Node(new Player());
+                            _nodes[j,i] = new Node(new Player(new BombFactory()));
                             break;
                         default:
                             Console.Write("Error occured");
