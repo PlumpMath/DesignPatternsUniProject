@@ -10,7 +10,7 @@ namespace Bomberman.Source.Entities.Factories
 {
     public abstract class AbstractEntityFactory
     {
-        public abstract Entity GetNode(string nodeType);
+        public abstract Entity CreateNode(string nodeType);
 
         public static AbstractEntityFactory CreateEntityFactory(string factoryType)
         {

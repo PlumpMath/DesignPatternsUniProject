@@ -2,10 +2,10 @@
 {
     class SimpleBomb : Bomb
     {
-        const int power = 1;
-        public override int getPower()
+        const int Power = 1;
+        public override int GetPower()
         {
-            return power;
+            return Power;
         }
     }
 }

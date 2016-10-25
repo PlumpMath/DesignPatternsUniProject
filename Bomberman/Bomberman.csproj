@@ -66,6 +66,10 @@
     <Compile Include="Source\Entities\Factories\AbstractEntityFactory.cs" />
     <Compile Include="Source\Entities\Factories\BombFactory.cs" />
     <Compile Include="Source\Entities\Factories\WallFactory.cs" />
+    <Compile Include="Source\Entities\States\IBombCreationState.cs" />
+    <Compile Include="Source\Entities\States\SimpleBombCreationState.cs" />
+    <Compile Include="Source\Entities\States\StrongBombCreationState.cs" />
+    <Compile Include="Source\Entities\StrongBomb.cs" />
     <Compile Include="Source\Game.cs" />
     <Compile Include="Source\Entities\HardWall.cs" />
     <Compile Include="Source\GameTimer.cs" />
@@ -107,6 +111,7 @@
   <ItemGroup>
     <Content Include="Resources\Map.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
