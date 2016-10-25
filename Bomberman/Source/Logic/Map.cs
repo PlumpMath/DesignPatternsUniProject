@@ -3,6 +3,7 @@ using System.Collections;
 using System.Configuration;
 using System.IO;
 using Bomberman.Source.Entities;
+using Bomberman.Source.Entities.Factories;
 
 namespace Bomberman.Source.Logic
 {
@@ -22,6 +23,7 @@ namespace Bomberman.Source.Logic
 
         private void BuildMap()
         {
+            var wallFactory = AbstractEntityFactory.CreateEntityFactory("wall");
             StreamReader streamReader = new StreamReader("../../Resources/Map.txt");
             string line;
             string[] walls;
@@ -36,10 +38,10 @@ namespace Bomberman.Source.Logic
                     switch (wall)
                     {
                         case "HW": 
-                            _nodes[j,i] = new Node(new HardWall());
+                            _nodes[j,i] = new Node(wallFactory.GetNode("hard"));
                             break;
                         case "SW":
-                            _nodes[j,i] = new Node(new SoftWall());
+                            _nodes[j,i] = new Node(wallFactory.GetNode("soft"));
                             break;
                         case "EW":
                             _nodes[j,i] = new Node(null);

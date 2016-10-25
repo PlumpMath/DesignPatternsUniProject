@@ -63,6 +63,9 @@
     <Compile Include="Source\Entities\Bomb.cs" />
     <Compile Include="Source\Entities\Entity.cs" />
     <Compile Include="Source\Entities\Explosion.cs" />
+    <Compile Include="Source\Entities\Factories\AbstractEntityFactory.cs" />
+    <Compile Include="Source\Entities\Factories\BombFactory.cs" />
+    <Compile Include="Source\Entities\Factories\WallFactory.cs" />
     <Compile Include="Source\Game.cs" />
     <Compile Include="Source\Entities\HardWall.cs" />
     <Compile Include="Source\GameTimer.cs" />

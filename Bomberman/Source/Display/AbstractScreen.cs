@@ -11,6 +11,7 @@
             Display = display;
             Lenght = lenght;
             Whidth = width;
+            display.SetDimentions(width, lenght);
         }
 
         public abstract void Draw();

@@ -12,7 +12,7 @@ namespace Bomberman.Source.Display
         private int _nodeWhidth;
         private int _nodeLenght;
 
-        public MapScreen(Map map, IDisplay display, int width = 600, int lenght = 600) : base(display, width, lenght)
+        public MapScreen(Map map, IDisplay display, int width = 550, int lenght = 550) : base(display, width, lenght)
         {
             this._map = map;
             Display.SetDimentions(width, lenght);
@@ -29,39 +29,36 @@ namespace Bomberman.Source.Display
 
         public override void Draw()
         {
-
-           
             Display.Clear();
-            
-            Display.SetColor("#40A76B");
             for (int i = 0; i < _map.Lenght; i++)
             {
                 for (int j = 0; j < _map.Width; j++)
                 {
                     var node = _map.getNode(i, j);
-                    DrawNode(node);
-                    Rectangle rectangle = new Rectangle(i* _nodeLenght, j*_nodeWhidth, _nodeWhidth, _nodeLenght);
-                    Display.DrawRectangle(rectangle);
+                    var pos = new Rectangle(i * _nodeLenght, j * _nodeWhidth, _nodeWhidth, _nodeLenght);
+                    DrawNode(node, pos);
                 }
             }
-            //Display.DrawBackground();
             Display.Refresh();
 
         }
 
-        void DrawNode(Node node)
+        private void DrawNode(Node node, Rectangle pos)
         {
             if (node.Entity == null)
             {
-                Display.SetColor("#0101DF");
+                Display.SetColor("#ffffff");
+                Display.DrawRectangle(pos);
             }
             else if (node.Entity.GetType() == typeof(SoftWall))
             {
-                Display.SetColor("#2A1B0A");                    
+                Display.SetColor("#2A1B0A");
+                Display.DrawRectangle(pos);
             }
             else if (node.Entity.GetType() == typeof(HardWall))
             {
                 Display.SetColor("#424242");
+                Display.DrawRectangle(pos);
             }
 
             

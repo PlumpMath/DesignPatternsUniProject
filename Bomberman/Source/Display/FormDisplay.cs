@@ -27,7 +27,7 @@ namespace Bomberman.Source.Display
             };
             _form.Controls.Add(pb);
             canvas = pb;
-            _image = new Bitmap(_form.Width, _form.Height);
+            _image = new Bitmap(_form.ClientSize.Width, _form.ClientSize.Height);
             canvas.Image = _image;
         }
 
@@ -39,8 +39,9 @@ namespace Bomberman.Source.Display
 
         public void SetDimentions(int width, int lenght)
         {
-            _form.Size = new Size(width, lenght);
-            
+            _form.ClientSize = new Size(width, lenght);
+            _image = new Bitmap(_form.ClientSize.Width, _form.ClientSize.Width);
+
         }
 
         public void SetColor(string code)
