@@ -46,6 +46,9 @@ namespace Bomberman.Source.Logic
                         case "EW":
                             _nodes[j,i] = new Node(null);
                             break;
+                        case "PL":
+                            _nodes[j,i] = new Node(new Player());
+                            break;
                         default:
                             Console.Write("Error occured");
                             break;

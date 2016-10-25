@@ -11,6 +11,8 @@ namespace Bomberman.Source.Display
 
         private int _nodeWhidth;
         private int _nodeLenght;
+        public int playerXpos { get; set; }
+        public int playerYpos { get; set; }
 
         public MapScreen(Map map, IDisplay display, int width = 550, int lenght = 550) : base(display, width, lenght)
         {
@@ -35,6 +37,11 @@ namespace Bomberman.Source.Display
                 for (int j = 0; j < _map.Width; j++)
                 {
                     var node = _map.getNode(i, j);
+                    if (node.Entity != null && node.Entity.GetType() == typeof(Player))
+                    {
+                        playerXpos = i;
+                        playerYpos = j;
+                    }
                     var pos = new Rectangle(i * _nodeLenght, j * _nodeWhidth, _nodeWhidth, _nodeLenght);
                     DrawNode(node, pos);
                 }
@@ -49,16 +56,24 @@ namespace Bomberman.Source.Display
             {
                 Display.SetColor("#ffffff");
                 Display.DrawRectangle(pos);
+                Display.DrawImage("../../Resources/floor.png", pos);
             }
             else if (node.Entity.GetType() == typeof(SoftWall))
             {
                 Display.SetColor("#2A1B0A");
                 Display.DrawRectangle(pos);
+                Display.DrawImage("../../Resources/rock.png", pos);
             }
             else if (node.Entity.GetType() == typeof(HardWall))
             {
                 Display.SetColor("#424242");
                 Display.DrawRectangle(pos);
+            }
+            else if (node.Entity.GetType() == typeof(Player))
+            {
+                Display.SetColor("#000000");
+                Display.DrawRectangle(pos);
+                Display.DrawImage("../../Resources/p_1_down.png", pos);
             }
 
             

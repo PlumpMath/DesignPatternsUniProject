@@ -15,7 +15,7 @@ namespace Bomberman.Source.Display
 
         void DrawRectangle(Rectangle destination);
 
-        void DrawImage(string image, Rectangle source, Rectangle destination);
+        void DrawImage(string image, Rectangle destination);
 
         void DrawText(string text, Rectangle rectangle);
 
