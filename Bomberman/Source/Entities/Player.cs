@@ -9,8 +9,6 @@ namespace Bomberman.Source.Entities
         
         private BombFactory _bombFactory;
         private Stack<Bomb> _bombs = new Stack<Bomb>();
-        public int X { get; set; }
-        public int Y { get; set; }
 
         public IBombCreationState BomCreationState { get; set;}
 
@@ -22,6 +20,10 @@ namespace Bomberman.Source.Entities
 
         public Bomb Pop()
         {
+            if (_bombs.Count <= 0)
+            {
+                return null;
+            }
             return _bombs.Pop();
         }
 

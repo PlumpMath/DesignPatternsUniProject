@@ -11,6 +11,8 @@ namespace Bomberman.Source.Logic
     {
         public int Lenght { get; }
         public int Width { get; }
+        public int PlayerXpos { get; set; }
+        public int PlayerYpos { get; set; }
 
         private Node[,] _nodes;
 
@@ -48,6 +50,8 @@ namespace Bomberman.Source.Logic
                             break;
                         case "PL":
                             _nodes[j,i] = new Node(new Player(new BombFactory()));
+                            PlayerXpos = j;
+                            PlayerYpos = i;
                             break;
                         default:
                             Console.Write("Error occured");
@@ -60,9 +64,41 @@ namespace Bomberman.Source.Logic
 
         }
 
-        public Node getNode(int x, int y)
+        public Node GetNode(int x, int y)
         {
             return _nodes[x,y];
+        }
+
+        public void MovePlayer(string pos)
+        {
+            switch (pos)
+            {
+                case "up":
+                    ChangePlayerPos(PlayerXpos, PlayerYpos-1);
+                    break;
+                case "down":
+                    ChangePlayerPos(PlayerXpos, PlayerYpos+1);
+                    break;
+                case "left":
+                    ChangePlayerPos(PlayerXpos-1, PlayerYpos);
+                    break;
+                case "right":
+                    ChangePlayerPos(PlayerXpos+1, PlayerYpos);
+                    break;
+            }
+        }
+
+        private void ChangePlayerPos(int x, int y)
+        {
+            if (!GetNode(x, y).IsEmpty())
+            {
+                return;
+            }
+            var player = (Player) GetNode(PlayerXpos, PlayerYpos).Entity;
+            GetNode(x, y).Entity = player;
+            GetNode(PlayerXpos, PlayerYpos).Entity = player.Pop();
+            PlayerXpos = x;
+            PlayerYpos = y;
         }
 
     }

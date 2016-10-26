@@ -10,6 +10,7 @@ namespace Bomberman.Source
 {
     class Game : AbstractGameEngine
     {
+        private Map _map;
         public const int MaxFps = 60;
         public const int MaxTps = 60;
         private Stopwatch _fpsTimer = Stopwatch.StartNew();
@@ -29,7 +30,8 @@ namespace Bomberman.Source
             _form = form;
             _controller = new FormController(form);
             _display = new FormDisplay(form);
-            _screen = new MapScreen(new Map(), _display);
+            _map = new Map();
+            _screen = new MapScreen(_map, _display);
         }
 
 
@@ -93,25 +95,25 @@ namespace Bomberman.Source
 
             _controller.OnWClick(delegate
             {
-                GameTimer.Instance.Start();
+                _map.MovePlayer("up");
             });
 
             _controller.OnSClick(delegate
             {
-                GameTimer.Instance.Stop();
+                _map.MovePlayer("down");
             });
 
             _controller.OnAClick(delegate
             {
-               
+                _map.MovePlayer("left");
             });
             _controller.OnBClick(delegate
             {
-
+               
             });
             _controller.OnDClick(delegate
             {
-
+                _map.MovePlayer("right");
             });
         }
 
