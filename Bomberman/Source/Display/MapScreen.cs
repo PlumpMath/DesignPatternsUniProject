@@ -11,8 +11,7 @@ namespace Bomberman.Source.Display
 
         private int _nodeWhidth;
         private int _nodeLenght;
-        public int playerXpos { get; set; }
-        public int playerYpos { get; set; }
+        
 
         public MapScreen(Map map, IDisplay display, int width = 550, int lenght = 550) : base(display, width, lenght)
         {
@@ -36,12 +35,8 @@ namespace Bomberman.Source.Display
             {
                 for (int j = 0; j < _map.Width; j++)
                 {
-                    var node = _map.getNode(i, j);
-                    if (node.Entity != null && node.Entity.GetType() == typeof(Player))
-                    {
-                        playerXpos = i;
-                        playerYpos = j;
-                    }
+                    var node = _map.GetNode(i, j);
+                    
                     var pos = new Rectangle(i * _nodeLenght, j * _nodeWhidth, _nodeWhidth, _nodeLenght);
                     DrawNode(node, pos);
                 }
@@ -78,5 +73,7 @@ namespace Bomberman.Source.Display
 
             
         }
+
+       
     }
 }

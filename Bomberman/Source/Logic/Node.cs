@@ -4,7 +4,7 @@ namespace Bomberman.Source.Logic
 {
     public class Node
     {
-        public Entity Entity { get; }
+        public Entity Entity { get; set; }
 
         public Node(Entity en)
         {
@@ -15,5 +15,6 @@ namespace Bomberman.Source.Logic
         {
             return Entity == null;
         }
+
     }
 }
