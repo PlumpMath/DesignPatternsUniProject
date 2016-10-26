@@ -9,7 +9,7 @@ namespace Bomberman.Source
         {
             BindControls();
             GameTimer.Instance.OnTick(MainLoop);
-            //GameTimer.Instance.Start();
+            GameTimer.Instance.Start();
             StartApp();
 
         }

@@ -88,6 +88,12 @@ namespace Bomberman.Source.Logic
             }
         }
 
+        public Player GetPlayer()
+        {
+            var player = (Player) GetNode(PlayerXpos, PlayerYpos).Entity;
+            return player;
+        }
+
         private void ChangePlayerPos(int x, int y)
         {
             if (!GetNode(x, y).IsEmpty())

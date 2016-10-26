@@ -83,14 +83,7 @@ namespace Bomberman.Source
         {
             _controller.OnSpaceClick(delegate
             {
-                var random = new Random();
-                const string chars = "ABCDEF0123456789";
-
-                var code = "#" + new string(Enumerable.Repeat(chars, 6)
-                  .Select(s => s[random.Next(s.Length)]).ToArray());
-
-                _display.SetColor(code);
-                _display.DrawBackground();
+               _map.GetPlayer().Push();
             });
 
             _controller.OnWClick(delegate
