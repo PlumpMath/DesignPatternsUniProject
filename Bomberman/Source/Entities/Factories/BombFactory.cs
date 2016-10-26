@@ -20,6 +20,8 @@ namespace Bomberman.Source.Entities.Factories
             {
                 case "simple":
                     return new SimpleBomb();
+                case "strong":
+                    return new StrongBomb();
                 default:
                     return null;
             }

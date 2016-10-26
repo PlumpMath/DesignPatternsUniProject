@@ -1,9 +1,11 @@
 ﻿using System;
+using System.CodeDom;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
 using Bomberman.Source.Controls;
 using Bomberman.Source.Display;
+using Bomberman.Source.Entities.States;
 using Bomberman.Source.Logic;
 
 namespace Bomberman.Source
@@ -102,7 +104,14 @@ namespace Bomberman.Source
             });
             _controller.OnBClick(delegate
             {
-               
+                if (_map.GetPlayer().BomCreationState.GetType() == typeof(StrongBombCreationState))
+                {
+                    _map.GetPlayer().BomCreationState = new SimpleBombCreationState();
+                }
+                else
+                {
+                    _map.GetPlayer().BomCreationState = new StrongBombCreationState();
+                }
             });
             _controller.OnDClick(delegate
             {

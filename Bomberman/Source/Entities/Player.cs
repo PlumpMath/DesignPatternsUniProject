@@ -29,7 +29,8 @@ namespace Bomberman.Source.Entities
 
         public void Push()
         {
-            var bomb = _bombFactory.CreateBomb(BomCreationState.GetBombType());
+            var type = BomCreationState.GetBombType();
+            var bomb = _bombFactory.CreateBomb(type);
             _bombs.Push(bomb);
         }
 
