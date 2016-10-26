@@ -1,6 +1,8 @@
 ﻿namespace Bomberman.Source.Entities
 {
-    public class Entity
+    public abstract class Entity
     {
+        public abstract string getTexture();
+        public abstract string getColor();
     }
 }

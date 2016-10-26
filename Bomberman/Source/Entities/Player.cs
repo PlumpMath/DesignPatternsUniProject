@@ -30,5 +30,15 @@ namespace Bomberman.Source.Entities
             var bomb = _bombFactory.CreateBomb(BomCreationState.GetBombType());
             _bombs.Push(bomb);
         }
+
+        public override string getTexture()
+        {
+            return "../../Resources/p_1_down.png";
+        }
+
+        public override string getColor()
+        {
+            return "#000000";
+        }
     }
 }

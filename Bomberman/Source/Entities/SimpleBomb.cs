@@ -7,5 +7,15 @@
         {
             return Power;
         }
+
+        public override string getTexture()
+        {
+            return "../../Resources/bomb.png";
+        }
+
+        public override string getColor()
+        {
+            return "#000000";
+        }
     }
 }

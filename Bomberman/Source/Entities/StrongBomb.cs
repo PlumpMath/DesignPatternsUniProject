@@ -13,5 +13,15 @@ namespace Bomberman.Source.Entities
         {
             return power;
         }
+
+        public override string getTexture()
+        {
+            return "../../Resources/bombBonus.png";
+        }
+
+        public override string getColor()
+        {
+            return "#000000";
+        }
     }
 }

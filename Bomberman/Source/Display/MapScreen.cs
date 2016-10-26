@@ -54,29 +54,18 @@ namespace Bomberman.Source.Display
         {
             if (node.Entity == null)
             {
-                Display.SetColor("#ffffff");
-                Display.DrawRectangle(pos);
-                Display.DrawImage("../../Resources/floor.png", pos);
-            }
-            else if (node.Entity.GetType() == typeof(SoftWall))
-            {
-                Display.SetColor("#2A1B0A");
-                Display.DrawRectangle(pos);
-                Display.DrawImage("../../Resources/rock.png", pos);
-            }
-            else if (node.Entity.GetType() == typeof(HardWall))
-            {
-                Display.SetColor("#424242");
-                Display.DrawRectangle(pos);
-            }
-            else if (node.Entity.GetType() == typeof(Player))
-            {
                 Display.SetColor("#000000");
                 Display.DrawRectangle(pos);
-                Display.DrawImage("../../Resources/p_1_down.png", pos);
+                //Display.DrawImage("../../Resources/floor.png", pos);
+            }
+            else
+            {
+                Display.SetColor(node.Entity.getColor());
+                Display.DrawRectangle(pos);
+                Display.DrawImage(node.Entity.getTexture(), pos);
             }
 
-            
+
         }
     }
 }
