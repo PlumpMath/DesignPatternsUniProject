@@ -10,7 +10,7 @@
 
         public override string getTexture()
         {
-            return "../../Resources/bomb.png";
+            return "SimpleBomb";
         }
 
         public override string getColor()

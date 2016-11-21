@@ -36,7 +36,7 @@ namespace Bomberman.Source.Entities
 
         public override string getTexture()
         {
-            return "../../Resources/p_1_down.png";
+            return "Player";
         }
 
         public override string getColor()
