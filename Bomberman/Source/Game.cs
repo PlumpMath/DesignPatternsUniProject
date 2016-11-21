@@ -56,7 +56,7 @@ namespace Bomberman.Source
             {
                 _screen.Draw();
                  DisplayFps(fps);
-                _fpsCounter++;
+                frameRate++;
             }
            
         }
@@ -75,7 +75,6 @@ namespace Bomberman.Source
                 frameRate = 0;
                 lastTick = System.Environment.TickCount;
             }
-            frameRate++;
             return lastFrameRate;
         }
 
