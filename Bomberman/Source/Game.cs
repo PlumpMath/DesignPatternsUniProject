@@ -7,6 +7,7 @@ using Bomberman.Source.Controls;
 using Bomberman.Source.Display;
 using Bomberman.Source.Entities.States;
 using Bomberman.Source.Logic;
+using Bomberman.Source.Logic.Commands;
 
 namespace Bomberman.Source
 {
@@ -83,40 +84,12 @@ namespace Bomberman.Source
 
         protected override void BindControls()
         {
-            _controller.OnSpaceClick(delegate
-            {
-               _map.GetPlayer().Push();
-            });
-
-            _controller.OnWClick(delegate
-            {
-                _map.MovePlayer("up");
-            });
-
-            _controller.OnSClick(delegate
-            {
-                _map.MovePlayer("down");
-            });
-
-            _controller.OnAClick(delegate
-            {
-                _map.MovePlayer("left");
-            });
-            _controller.OnBClick(delegate
-            {
-                if (_map.GetPlayer().BomCreationState.GetType() == typeof(StrongBombCreationState))
-                {
-                    _map.GetPlayer().BomCreationState = new SimpleBombCreationState();
-                }
-                else
-                {
-                    _map.GetPlayer().BomCreationState = new StrongBombCreationState();
-                }
-            });
-            _controller.OnDClick(delegate
-            {
-                _map.MovePlayer("right");
-            });
+            _controller.OnSpaceClick(new PlaceBombCommand(_map));
+            _controller.OnWClick(new MovePlayerUpCommand(_map));
+            _controller.OnSClick(new MovePlayerDownCommand(_map));
+            _controller.OnAClick(new MovePlayerLeftCommand(_map));
+            _controller.OnDClick(new MovePlayerRightCommand(_map));
+            _controller.OnBClick(new ToggleBombTypeCommand(_map));
         }
 
     }

@@ -54,6 +54,7 @@
     </Compile>
     <Compile Include="Source\AbstractGameEngine.cs" />
     <Compile Include="Source\Controls\FormController.cs" />
+    <Compile Include="Source\Controls\ICommand.cs" />
     <Compile Include="Source\Controls\IController.cs" />
     <Compile Include="Source\Display\FormDisplay.cs" />
     <Compile Include="Source\Display\IDisplay.cs" />
@@ -73,6 +74,12 @@
     <Compile Include="Source\Game.cs" />
     <Compile Include="Source\Entities\HardWall.cs" />
     <Compile Include="Source\GameTimer.cs" />
+    <Compile Include="Source\Logic\Commands\ToggleBombTypeCommand.cs" />
+    <Compile Include="Source\Logic\Commands\PlaceBombCommand.cs" />
+    <Compile Include="Source\Logic\Commands\MovePlayerLeftCommand.cs" />
+    <Compile Include="Source\Logic\Commands\MovePlayerDownCommand.cs" />
+    <Compile Include="Source\Logic\Commands\MovePlayerRightCommand.cs" />
+    <Compile Include="Source\Logic\Commands\MovePlayerUpCommand.cs" />
     <Compile Include="Source\Logic\Map.cs" />
     <Compile Include="Source\Logic\Node.cs" />
     <Compile Include="Source\Entities\Player.cs" />

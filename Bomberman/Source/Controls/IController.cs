@@ -4,12 +4,12 @@ namespace Bomberman.Source.Controls
 {
     interface IController
     {
-        void OnWClick(Action action);
-        void OnDClick(Action action);
-        void OnAClick(Action action);
-        void OnBClick(Action action);
-        void OnSClick(Action action);
-        void OnSpaceClick(Action action);
+        void OnWClick(ICommand command);
+        void OnDClick(ICommand command);
+        void OnAClick(ICommand command);
+        void OnBClick(ICommand command);
+        void OnSClick(ICommand command);
+        void OnSpaceClick(ICommand command);
 
 
     }

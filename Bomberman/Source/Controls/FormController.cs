@@ -5,12 +5,12 @@ namespace Bomberman.Source.Controls
 {
     class FormController : IController
     {
-        private Action OnSpacePress;
-        private Action OnWPress;
-        private Action OnSPress;
-        private Action OnAPress;
-        private Action OnDPress;
-        private Action OnBPress;
+        private ICommand OnSpacePress;
+        private ICommand OnWPress;
+        private ICommand OnSPress;
+        private ICommand OnAPress;
+        private ICommand OnDPress;
+        private ICommand OnBPress;
 
         private Form _form;
 
@@ -26,61 +26,61 @@ namespace Bomberman.Source.Controls
             switch (e.KeyChar)
             {
                 case ' ':
-                    OnSpacePress();
+                    OnSpacePress.Execute();
                     e.Handled = true;
                     break;
                 case 'w':
-                    OnWPress();
+                    OnWPress.Execute();
                     e.Handled = true;
                     break;
                 case 's':
-                    OnSPress();
+                    OnSPress.Execute();
                     e.Handled = true;
                     break;
                 case 'a':
-                    OnAPress();
+                    OnAPress.Execute();
                     e.Handled = true;
                     break;
                 case 'd':
-                    OnDPress();
+                    OnDPress.Execute();
                     e.Handled = true;
                     break;
                 case 'b':
-                    OnBPress();
+                    OnBPress.Execute();
                     e.Handled = true;
                     break;
             }
             
         }
 
-        public void OnWClick(Action action)
+        public void OnWClick(ICommand command)
         {
-            OnWPress = action;
+            OnWPress = command;
         }
 
-        public void OnDClick(Action action)
+        public void OnDClick(ICommand command)
         {
-             OnDPress = action;
+             OnDPress = command;
         }
 
-        public void OnAClick(Action action)
+        public void OnAClick(ICommand command)
         {
-            OnAPress = action;
+            OnAPress = command;
         }
 
-        public void OnBClick(Action action)
+        public void OnBClick(ICommand command)
         {
-            OnBPress = action;
+            OnBPress = command;
         }
 
-        public void OnSClick(Action action)
+        public void OnSClick(ICommand command)
         {
-            OnSPress = action;
+            OnSPress = command;
         }
 
-        public void OnSpaceClick(Action action)
+        public void OnSpaceClick(ICommand command)
         {
-            OnSpacePress = action;
+            OnSpacePress = command;
         }
     }
 }
