@@ -22,6 +22,10 @@ namespace Bomberman.Source
         private int _fpsCounter = 0;
         private int _tpsCounter = 0;
 
+        private static int lastTick;
+        private static int lastFrameRate;
+        private static int frameRate;
+
 
         private IScreen _screen;
 
@@ -48,10 +52,10 @@ namespace Bomberman.Source
         protected override void DrawScreen()
         {
             var fps = GetFps();
-            if (_fpsCounter < MaxFps)
+            if (frameRate < MaxFps )
             {
                 _screen.Draw();
-                DisplayFps(_fpsCounter);
+                 DisplayFps(fps);
                 _fpsCounter++;
             }
            
@@ -65,16 +69,14 @@ namespace Bomberman.Source
 
         int GetFps()
         {
-            var time = _fpsTimer.ElapsedMilliseconds + 1;
-            int fps = (int) (1000 * (_fpsCounter / time));
-            if (time > 1000)
+            if (System.Environment.TickCount - lastTick >= 1000)
             {
-                _fpsCounter = 0;
-                _fpsTimer.Reset();
-                _fpsTimer.Start();
-                
+                lastFrameRate = frameRate;
+                frameRate = 0;
+                lastTick = System.Environment.TickCount;
             }
-            return fps;
+            frameRate++;
+            return lastFrameRate;
         }
 
         void DisplayFps(int fps)
