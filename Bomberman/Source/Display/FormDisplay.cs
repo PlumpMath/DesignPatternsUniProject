@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Bomberman.Source.Entities.Factories;
 using Rectangle = Bomberman.Source.Display.Rectangle;
 
 namespace Bomberman.Source.Display
@@ -15,12 +16,15 @@ namespace Bomberman.Source.Display
 
         private PictureBox canvas;
 
-        public FormDisplay(Form form)
+        private TextureFactory _textureFacoFactory;
+
+        public FormDisplay(Form form, TextureFactory textureFacoFactory)
         {
             _form = form;
             _form.FormBorderStyle = FormBorderStyle.FixedSingle;
             _form.MaximizeBox = false;
             _form.MinimizeBox = false;
+            _textureFacoFactory = textureFacoFactory;
             var pb = new PictureBox
             {
                 Dock = DockStyle.Fill
@@ -69,11 +73,10 @@ namespace Bomberman.Source.Display
         public void DrawImage(string image, Rectangle destination)
         {
             using (var g = Graphics.FromImage(_image))
-            {
-                Image newImage = Image.FromFile(image);
+            { 
 
                 System.Drawing.Rectangle rectangle = new System.Drawing.Rectangle(destination.X, destination.Y, destination.Width, destination.Lenght);
-                g.DrawImage(newImage, rectangle);
+                g.DrawImage(_textureFacoFactory.getTexture(image), rectangle);
                 canvas.Invalidate();
             }
         }

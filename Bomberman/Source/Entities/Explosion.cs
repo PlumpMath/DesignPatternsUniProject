@@ -4,7 +4,7 @@
     {
         public override string getTexture()
         {
-            return "../../Resources/explosion.png";
+            return "Explosion";
         }
 
         public override string getColor()

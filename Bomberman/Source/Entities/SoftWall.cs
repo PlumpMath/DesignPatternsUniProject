@@ -4,7 +4,7 @@
     {
         public override string getTexture()
         {
-            return "../../Resources/floor.png";
+            return "SoftWall";
         }
 
         public override string getColor()
