@@ -20,6 +20,7 @@ namespace Bomberman.Source
         public const int MaxFps = 60;
         public const int MaxTps = 60;
         private readonly TimeTracker _timeTracker = new TimeTracker();
+        private Stopwatch _tpsTimer = Stopwatch.StartNew();
 
         private static int lastTick;
         private static int lastFrameRate;
@@ -103,6 +104,8 @@ namespace Bomberman.Source
             _controller.OnAClick(new MovePlayerLeftCommand(_map));
             _controller.OnDClick(new MovePlayerRightCommand(_map));
             _controller.OnBClick(new ToggleBombTypeCommand(_map));
+            _controller.OnIClick(new AddIgnitionPowerUpCommand(_map));
+            _controller.OnPClick(new AddPowerPowerUpCommand(_map));
         }
 
     }

@@ -75,6 +75,12 @@
     <Compile Include="Source\Game.cs" />
     <Compile Include="Source\Entities\HardWall.cs" />
     <Compile Include="Source\GameTimer.cs" />
+    <Compile Include="Source\Logic\BombPowerUps\AbstractBombPowerUp.cs" />
+    <Compile Include="Source\Logic\BombPowerUps\DecreasedIgnitionBomb.cs" />
+    <Compile Include="Source\Logic\BombPowerUps\IncreasedPowerBomb.cs" />
+    <Compile Include="Source\Logic\BombPowerUps\PowerUpApplier.cs" />
+    <Compile Include="Source\Logic\Commands\AddIgnitionPowerUpCommand.cs" />
+    <Compile Include="Source\Logic\Commands\AddPowerPowerUpCommand.cs" />
     <Compile Include="Source\Logic\Commands\ToggleBombTypeCommand.cs" />
     <Compile Include="Source\Logic\Commands\PlaceBombCommand.cs" />
     <Compile Include="Source\Logic\Commands\MovePlayerLeftCommand.cs" />

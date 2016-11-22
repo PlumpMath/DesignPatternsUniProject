@@ -10,6 +10,8 @@ namespace Bomberman.Source.Controls
         void OnBClick(ICommand command);
         void OnSClick(ICommand command);
         void OnSpaceClick(ICommand command);
+        void OnIClick(ICommand command);
+        void OnPClick(ICommand command);
 
 
     }

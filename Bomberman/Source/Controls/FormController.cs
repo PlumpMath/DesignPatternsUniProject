@@ -11,6 +11,8 @@ namespace Bomberman.Source.Controls
         private ICommand OnAPress;
         private ICommand OnDPress;
         private ICommand OnBPress;
+        private ICommand OnIPress;
+        private ICommand OnPPress;
 
         private Form _form;
 
@@ -49,6 +51,14 @@ namespace Bomberman.Source.Controls
                     OnBPress.Execute();
                     e.Handled = true;
                     break;
+                case 'p':
+                    OnPPress.Execute();
+                    e.Handled = true;
+                    break;
+                case 'i':
+                    OnIPress.Execute();
+                    e.Handled = true;
+                    break;
             }
             
         }
@@ -81,6 +91,16 @@ namespace Bomberman.Source.Controls
         public void OnSpaceClick(ICommand command)
         {
             OnSpacePress = command;
+        }
+
+        public void OnIClick(ICommand command)
+        {
+            OnIPress = command;
+        }
+
+        public void OnPClick(ICommand command)
+        {
+            OnPPress = command;
         }
     }
 }

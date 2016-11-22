@@ -1,13 +1,15 @@
 ﻿using System.Collections.Generic;
+using System.Drawing;
 using Bomberman.Source.Entities.Factories;
 using Bomberman.Source.Entities.States;
+using Bomberman.Source.Logic.BombPowerUps;
 using Bomberman.Source.Logic.Strategies;
 
 namespace Bomberman.Source.Entities
 {
     public class Player : Entity
     {
-        
+        private List<string> _powerUps = new List<string>();
         private BombFactory _bombFactory;
         public IBombExplosionStrategy BombExplosionStrategy { get; set; }
         private Stack<Bomb> _bombs = new Stack<Bomb>();
@@ -35,7 +37,7 @@ namespace Bomberman.Source.Entities
         {
             var type = BomCreationState.GetBombType();
             var bomb = _bombFactory.CreateBomb(type);
-            _bombs.Push(bomb);
+            _bombs.Push(ApplyPowerUps(bomb));
         }
 
         public override string GetTexture()
@@ -46,6 +48,21 @@ namespace Bomberman.Source.Entities
         public override string GetColor()
         {
             return "#000000";
+        }
+
+        public void AddPowerUp(string name)
+        {
+            _powerUps.Add(name);
+        }
+
+        private Bomb ApplyPowerUps(Bomb target)
+        {
+            var result = target;
+            foreach (var powerUp in _powerUps)
+            {
+                result = PowerUpApplier.ApplyPowerUp(powerUp, result);
+            }
+            return result;
         }
     }
 }
