@@ -56,6 +56,8 @@ namespace Bomberman.Source
             {
                 _screen.Draw();
                  DisplayFps(fps);
+                DisplayTicks(GetTicks());
+                frameRate++;
             }
            
         }
@@ -74,14 +76,23 @@ namespace Bomberman.Source
                 frameRate = 0;
                 lastTick = System.Environment.TickCount;
             }
-            frameRate++;
             return lastFrameRate;
+        }
+
+        int GetTicks()
+        {
+            return (int)_tpsTimer.ElapsedMilliseconds/1000;
         }
 
         void DisplayFps(int fps)
         {
             _display.SetColor("#4FFB09");
             _display.DrawText(fps.ToString(), new Rectangle(0, 0, 20, 1));
+        }
+        void DisplayTicks(int fps)
+        {
+            _display.SetColor("#4FFB09");
+            _display.DrawText(fps.ToString(), new Rectangle(480, 0, 20, 1));
         }
 
         protected override void BindControls()
