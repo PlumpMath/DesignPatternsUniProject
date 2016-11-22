@@ -6,5 +6,7 @@
         public int PosY { get; set; }
         public abstract string GetTexture();
         public abstract string GetColor();
+        public abstract bool isDestructable();
+        public abstract bool stopsExplosion();
     }
 }

@@ -19,6 +19,16 @@ namespace Bomberman.Source.Logic.BombPowerUps
             return Bomb.GetColor();
         }
 
+        public override bool isDestructable()
+        {
+            return Bomb.isDestructable();
+        }
+
+        public override bool stopsExplosion()
+        {
+            return Bomb.stopsExplosion();
+        }
+
         public override int GetPower()
         {
             return Bomb.GetPower() + 1;

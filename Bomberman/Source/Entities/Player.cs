@@ -50,6 +50,16 @@ namespace Bomberman.Source.Entities
             return "#000000";
         }
 
+        public override bool isDestructable()
+        {
+            return true;
+        }
+
+        public override bool stopsExplosion()
+        {
+            return false;
+        }
+
         public void AddPowerUp(string name)
         {
             _powerUps.Add(name);

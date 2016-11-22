@@ -23,5 +23,15 @@
         {
             return "#000000";
         }
+
+        public override bool isDestructable()
+        {
+            return false;
+        }
+
+        public override bool stopsExplosion()
+        {
+            return false;
+        }
     }
 }

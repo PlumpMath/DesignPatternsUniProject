@@ -58,9 +58,9 @@ namespace Bomberman.Source.Logic.Strategies
                 tmp = i;
                 var node = _map.GetNode(x, y + i);
 
-                if (node != null && (node.IsEmpty() || node.Entity.GetType() == typeof(SoftWall)))
+                if (node != null && (node.IsEmpty() || node.Entity.isDestructable()))
                 {
-                    if (!node.IsEmpty() && node.Entity.GetType() == typeof(SoftWall))
+                    if (!node.IsEmpty() && node.Entity.stopsExplosion())
                     {
                         tmp = size+1;
                     }
@@ -79,9 +79,9 @@ namespace Bomberman.Source.Logic.Strategies
             {
                 tmp = i;
                 var node = _map.GetNode(x, y - i);
-                if (node != null && (node.IsEmpty() || node.Entity.GetType() == typeof(SoftWall)))
+                if (node != null && (node.IsEmpty() || node.Entity.isDestructable()))
                 {
-                    if (!node.IsEmpty() && node.Entity.GetType() == typeof(SoftWall))
+                    if (!node.IsEmpty() && node.Entity.stopsExplosion())
                     {
                         tmp = size+1;
                     }
@@ -100,9 +100,9 @@ namespace Bomberman.Source.Logic.Strategies
             {
                 tmp = i;
                 var node = _map.GetNode(x-i, y);
-                if (node != null && (node.IsEmpty() || node.Entity.GetType() == typeof(SoftWall)))
+                if (node != null && (node.IsEmpty() || node.Entity.isDestructable()))
                 {
-                    if (!node.IsEmpty() && node.Entity.GetType() == typeof(SoftWall))
+                    if (!node.IsEmpty() && node.Entity.stopsExplosion())
                     {
                         tmp = size + 1;
                     }
@@ -121,9 +121,9 @@ namespace Bomberman.Source.Logic.Strategies
             {
                 tmp = i;
                 var node = _map.GetNode(x + i, y);
-                if (node != null && (node.IsEmpty() || node.Entity.GetType() == typeof(SoftWall)))
+                if (node != null && (node.IsEmpty() || node.Entity.isDestructable()))
                 {
-                    if (!node.IsEmpty() && node.Entity.GetType() == typeof(SoftWall))
+                    if (!node.IsEmpty() && node.Entity.stopsExplosion())
                     {
                         tmp = size+1;
                     }
