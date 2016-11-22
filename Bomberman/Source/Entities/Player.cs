@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Bomberman.Source.Entities.Factories;
 using Bomberman.Source.Entities.States;
+using Bomberman.Source.Logic.Strategies;
 
 namespace Bomberman.Source.Entities
 {
@@ -8,6 +9,7 @@ namespace Bomberman.Source.Entities
     {
         
         private BombFactory _bombFactory;
+        public IBombExplosionStrategy BombExplosionStrategy { get; set; }
         private Stack<Bomb> _bombs = new Stack<Bomb>();
 
         public IBombCreationState BomCreationState { get; set;}
@@ -24,7 +26,9 @@ namespace Bomberman.Source.Entities
             {
                 return null;
             }
-            return _bombs.Pop();
+            var bomb = _bombs.Pop();
+            BombExplosionStrategy.Ignite(bomb);
+            return bomb;
         }
 
         public void Push()
@@ -34,12 +38,12 @@ namespace Bomberman.Source.Entities
             _bombs.Push(bomb);
         }
 
-        public override string getTexture()
+        public override string GetTexture()
         {
             return "Player";
         }
 
-        public override string getColor()
+        public override string GetColor()
         {
             return "#000000";
         }

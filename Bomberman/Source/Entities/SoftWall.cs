@@ -2,12 +2,12 @@
 {
     public class SoftWall : Wall
     {
-        public override string getTexture()
+        public override string GetTexture()
         {
             return "SoftWall";
         }
 
-        public override string getColor()
+        public override string GetColor()
         {
             return "#2A1B0A";
         }

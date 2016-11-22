@@ -9,17 +9,23 @@ namespace Bomberman.Source.Entities
     class StrongBomb : Bomb
     {
         const int power = 3;
+        const int IgnitionTime = 3;
         public override int GetPower()
         {
             return power;
         }
 
-        public override string getTexture()
+        public override int GetIgnitionTime()
+        {
+            return IgnitionTime;
+        }
+
+        public override string GetTexture()
         {
             return "StrongBomb";
         }
 
-        public override string getColor()
+        public override string GetColor()
         {
             return "#000000";
         }

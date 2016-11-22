@@ -55,9 +55,9 @@ namespace Bomberman.Source.Display
             }
             else
             {
-                Display.SetColor(node.Entity.getColor());
+                Display.SetColor(node.Entity.GetColor());
                 Display.DrawRectangle(pos);
-                Display.DrawImage(node.Entity.getTexture(), pos);
+                Display.DrawImage(node.Entity.GetTexture(), pos);
             }
 
 

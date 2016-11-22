@@ -2,12 +2,12 @@
 {
     public class Explosion : Entity
     {
-        public override string getTexture()
+        public override string GetTexture()
         {
             return "Explosion";
         }
 
-        public override string getColor()
+        public override string GetColor()
         {
             return "#000000";
         }

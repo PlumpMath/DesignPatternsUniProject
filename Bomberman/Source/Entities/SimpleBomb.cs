@@ -2,18 +2,24 @@
 {
     class SimpleBomb : Bomb
     {
-        const int Power = 1;
+        const int Power = 2;
+        const int IgnitionTime = 5;
         public override int GetPower()
         {
             return Power;
         }
 
-        public override string getTexture()
+        public override int GetIgnitionTime()
+        {
+            return IgnitionTime;
+        }
+
+        public override string GetTexture()
         {
             return "SimpleBomb";
         }
 
-        public override string getColor()
+        public override string GetColor()
         {
             return "#000000";
         }

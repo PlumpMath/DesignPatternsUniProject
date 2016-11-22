@@ -2,12 +2,12 @@
 {
     class HardWall : Wall
     {
-        public override string getTexture()
+        public override string GetTexture()
         {
             return "HardWall";
         }
 
-        public override string getColor()
+        public override string GetColor()
         {
             return "#424242";
         }

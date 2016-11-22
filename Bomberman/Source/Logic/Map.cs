@@ -40,16 +40,22 @@ namespace Bomberman.Source.Logic
                     switch (wall)
                     {
                         case "HW": 
-                            _nodes[j,i] = new Node(wallFactory.CreateNode("hard"));
+                            _nodes[j, i] = new Node(wallFactory.CreateNode("hard"));
+                            _nodes[j, i].Entity.PosX = j;
+                            _nodes[j, i].Entity.PosY = i;
                             break;
                         case "SW":
-                            _nodes[j,i] = new Node(wallFactory.CreateNode("soft"));
+                            _nodes[j, i] = new Node(wallFactory.CreateNode("soft"));
+                            _nodes[j, i].Entity.PosX = j;
+                            _nodes[j, i].Entity.PosY = i;
                             break;
                         case "EW":
-                            _nodes[j,i] = new Node(null);
+                            _nodes[j, i] = new Node(null);
                             break;
                         case "PL":
-                            _nodes[j,i] = new Node(new Player(new BombFactory()));
+                            _nodes[j, i] = new Node(new Player(new BombFactory()));
+                            _nodes[j, i].Entity.PosX = j;
+                            _nodes[j, i].Entity.PosY = i;
                             PlayerXpos = j;
                             PlayerYpos = i;
                             break;
@@ -66,6 +72,10 @@ namespace Bomberman.Source.Logic
 
         public Node GetNode(int x, int y)
         {
+            if (x < 0 || x >= Width || y < 0 || y >= Lenght)
+            {
+                return null;
+            }
             return _nodes[x,y];
         }
 
@@ -102,7 +112,14 @@ namespace Bomberman.Source.Logic
             }
             var player = (Player) GetNode(PlayerXpos, PlayerYpos).Entity;
             GetNode(x, y).Entity = player;
-            GetNode(PlayerXpos, PlayerYpos).Entity = player.Pop();
+            var bomb = player.Pop();
+            GetNode(PlayerXpos, PlayerYpos).Entity = bomb;
+            if (bomb != null)
+            {
+                bomb.PosX = PlayerXpos;
+                bomb.PosY = PlayerYpos;
+            }
+           
             PlayerXpos = x;
             PlayerYpos = y;
         }

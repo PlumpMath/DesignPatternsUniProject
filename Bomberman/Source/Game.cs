@@ -9,6 +9,8 @@ using Bomberman.Source.Entities.Factories;
 using Bomberman.Source.Entities.States;
 using Bomberman.Source.Logic;
 using Bomberman.Source.Logic.Commands;
+using Bomberman.Source.Logic.Strategies;
+using Bomberman.Source.Logic.TimeObservers;
 
 namespace Bomberman.Source
 {
@@ -17,10 +19,7 @@ namespace Bomberman.Source
         private Map _map;
         public const int MaxFps = 60;
         public const int MaxTps = 60;
-        private Stopwatch _fpsTimer = Stopwatch.StartNew();
-        private Stopwatch _tpsTimer = Stopwatch.StartNew();
-        private int _fpsCounter = 0;
-        private int _tpsCounter = 0;
+        private readonly TimeTracker _timeTracker = new TimeTracker();
 
         private static int lastTick;
         private static int lastFrameRate;
@@ -40,6 +39,7 @@ namespace Bomberman.Source
             _display = new FormDisplay(form, new TextureFactory());
             _map = new Map();
             _screen = new MapScreen(_map, _display);
+            _map.GetPlayer().BombExplosionStrategy = new SimpleBombExplosionStrategy(_map, _timeTracker);
         }
 
 
@@ -56,14 +56,13 @@ namespace Bomberman.Source
             {
                 _screen.Draw();
                  DisplayFps(fps);
-                _fpsCounter++;
             }
            
         }
 
         protected override void AdvanceLogic()
         {
-
+            _timeTracker.DoTick();
         }
 
 
