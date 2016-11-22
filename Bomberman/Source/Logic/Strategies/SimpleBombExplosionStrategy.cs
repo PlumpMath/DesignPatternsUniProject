@@ -49,17 +49,23 @@ namespace Bomberman.Source.Logic.Strategies
 
         private void GenerateExplosions(int size, int x, int y)
         {
+            int tmp = 1;
             CreateExplosion(x, y);
 
             //up
             for (int i = 1; i <= size; i++)
             {
-               
+                tmp = i;
                 var node = _map.GetNode(x, y + i);
 
-                if (node != null && node.IsEmpty())
+                if (node != null && (node.IsEmpty() || node.Entity.GetType() == typeof(SoftWall)))
                 {
+                    if (!node.IsEmpty() && node.Entity.GetType() == typeof(SoftWall))
+                    {
+                        tmp = size+1;
+                    }
                     CreateExplosion(x, y + i);
+                    i = tmp;
                 }
                 else
                 {
@@ -71,12 +77,18 @@ namespace Bomberman.Source.Logic.Strategies
             //down
             for (int i = 1; i <= size; i++)
             {
-              
+                tmp = i;
                 var node = _map.GetNode(x, y - i);
-                if (node != null && node.IsEmpty())
+                if (node != null && (node.IsEmpty() || node.Entity.GetType() == typeof(SoftWall)))
                 {
+                    if (!node.IsEmpty() && node.Entity.GetType() == typeof(SoftWall))
+                    {
+                        tmp = size+1;
+                    }
                     CreateExplosion(x, y - i);
-                }else
+                    i = tmp;
+                }
+                else
                 {
                     break;
                 }
@@ -86,11 +98,18 @@ namespace Bomberman.Source.Logic.Strategies
             //left
             for (int i = 1; i <= size; i++)
             {
+                tmp = i;
                 var node = _map.GetNode(x-i, y);
-                if (node != null && node.IsEmpty())
+                if (node != null && (node.IsEmpty() || node.Entity.GetType() == typeof(SoftWall)))
                 {
+                    if (!node.IsEmpty() && node.Entity.GetType() == typeof(SoftWall))
+                    {
+                        tmp = size + 1;
+                    }
                     CreateExplosion(x-i, y);
-                }else
+                    i = tmp;
+                }
+                else
                 {
                     break;
                 }
@@ -100,12 +119,18 @@ namespace Bomberman.Source.Logic.Strategies
             //right
             for (int i = 1; i <= size; i++)
             {
-              
+                tmp = i;
                 var node = _map.GetNode(x + i, y);
-                if (node != null && node.IsEmpty())
+                if (node != null && (node.IsEmpty() || node.Entity.GetType() == typeof(SoftWall)))
                 {
+                    if (!node.IsEmpty() && node.Entity.GetType() == typeof(SoftWall))
+                    {
+                        tmp = size+1;
+                    }
                     CreateExplosion(x + i, y);
-                }else
+                    i = tmp;
+                }
+                else
                 {
                     break;
                 }
