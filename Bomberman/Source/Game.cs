@@ -56,7 +56,6 @@ namespace Bomberman.Source
             {
                 _screen.Draw();
                  DisplayFps(fps);
-                DisplayTicks(GetTicks());
                 frameRate++;
             }
            
@@ -79,10 +78,6 @@ namespace Bomberman.Source
             return lastFrameRate;
         }
 
-        int GetTicks()
-        {
-            return (int)_tpsTimer.ElapsedMilliseconds/1000;
-        }
 
         void DisplayFps(int fps)
         {
