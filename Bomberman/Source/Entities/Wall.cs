@@ -2,6 +2,6 @@
 {
     public abstract class Wall: Entity
     {
-
+        public abstract bool isNull();
     }
 }

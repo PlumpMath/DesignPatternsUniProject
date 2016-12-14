@@ -21,5 +21,10 @@
         {
             return true;
         }
+
+        public override bool isNull()
+        {
+            return false;
+        }
     }
 }

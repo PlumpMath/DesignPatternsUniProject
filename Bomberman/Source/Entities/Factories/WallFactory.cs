@@ -22,7 +22,7 @@ namespace Bomberman.Source.Entities.Factories
                 case "soft":
                     return new SoftWall();
                 default:
-                    return null;
+                    return new NullWall();
             }
         }
     }

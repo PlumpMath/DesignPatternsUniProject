@@ -68,6 +68,7 @@
     <Compile Include="Source\Entities\Factories\BombFactory.cs" />
     <Compile Include="Source\Entities\Factories\TextureFactory.cs" />
     <Compile Include="Source\Entities\Factories\WallFactory.cs" />
+    <Compile Include="Source\Entities\NullWall.cs" />
     <Compile Include="Source\Entities\States\IBombCreationState.cs" />
     <Compile Include="Source\Entities\States\SimpleBombCreationState.cs" />
     <Compile Include="Source\Entities\States\StrongBombCreationState.cs" />
